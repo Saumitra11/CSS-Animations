@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            text-align: center;
+        }
+        .sky{
+            background-color: skyblue;
+            height: 205px;
+        }
+        .cloud1{
+            position: absolute;
+            /* width: 200px; */
+            left: 0;
+            animation: wind 50s linear 0s infinite reverse both;
+        }
+        .cloud2{
+            position: absolute;
+            width: 200px;
+            left: 250px;
+            top: 50px;
+            opacity: 0.8; 
+            animation: wind 80s linear 0s infinite reverse both;  
+        }
+        .grass{
+            width: 100%;
+            background-color: lawngreen;
+            height: 270px;
+        }
+        .road{
+            width: 100%;
+            background-color: dimgrey;
+            border: 1px solid grey;
+            height: 300px;
+        }
+        .road hr{
+            padding-top: 150px;
+            color: white;
+            border-bottom: 5px dashed white;
+        }
+        .road .mario{
+            position: absolute;
+            left: 0;
+            animation-name: drive;
+            animation-duration: 5s;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+        .road .luigi{
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            animation: drive 8s linear 0s infinite both;
+        }
+        @keyframes drive{
+            from{
+                transform: translateX(-500px);
+            }
+            to{
+                transform: translateX(1550px);
+            }
+        }
+        @keyframes wind{
+            from{
+                transform: translateX(-100px);
+            }
+            to{
+                transform: translateX(1000px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sky">
+        <img class="cloud1" src='images/cloud.png'>
+        <img class="cloud2" src='images/cloud.png'>
+    </div>
+        <div class="grass">
+        </div>
+        <div class="road">
+            <img class="mario" src="images/mario.png">
+            <img class="luigi" src="images/luigi.png">
+            <div class="lines">
+                <hr>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
